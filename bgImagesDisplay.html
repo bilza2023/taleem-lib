@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taleem Object</title>
+    <style>
+        .bg-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        .bg-image {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+        }
+
+        .sprite-container {
+            margin: 2rem;
+        }
+
+        .sprite {
+            border: 1px solid #eee;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        canvas {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h2>Background Images</h2>
+    <div class="bg-images" id="bgImagesContainer"></div>
+    
+    <script type="module">
+        import Taleem from './index.js';
+        
+        async function displayAssets() {
+            const assets = await Taleem.loadAssets();
+
+            // Display background images
+            const bgContainer = document.getElementById('bgImagesContainer');
+            assets.bgImages.forEach(bgImage => {
+                const img = new Image();
+                img.src = bgImage.name;
+                img.className = 'bg-image';
+                img.alt = bgImage.name.split('/').pop();
+                bgContainer.appendChild(img);
+            });
+
+         
+        }
+
+        displayAssets();
+    </script>
+</body>
+</html>

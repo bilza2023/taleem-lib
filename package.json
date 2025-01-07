@@ -1,0 +1,35 @@
+{
+  "name": "taleem-lib",
+  "version": "0.9.0",
+  "description": "Core JavaScript code for Taleem Project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+
+},
+  "files": [
+    "index.js",
+    "Taleem.js",
+    "assets/**/*"
+  ],
+  "keywords": [
+    "education",
+    "assets",
+    "sprites",
+    "images",
+    "loader"
+  ],
+  "author": "Bilal Tariq",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/taleem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/taleem/issues"
+  },
+  "homepage": "https://github.com/yourusername/taleem#readme"
+}
