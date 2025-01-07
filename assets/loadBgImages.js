@@ -1,5 +1,6 @@
-export default async function loadBgImages() {
-    const BASE_PATH = '/assets/bgImages/';
+export default async function loadBgImages(basePath) {
+    // const BASE_PATH = '/assets/bgImages/';
+    const BASE_PATH = basePath;;
     
     const imageConfigs = [
       'paper01.jpg',

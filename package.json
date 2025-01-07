@@ -1,6 +1,6 @@
 {
   "name": "taleem-lib",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Core JavaScript code for Taleem Project",
   "main": "index.js",
   "type": "module",

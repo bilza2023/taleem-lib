@@ -1,7 +1,6 @@
-# README.md
 # Taleem
 
-A JavaScript library for efficiently loading and managing educational assets including background images, sprites, and icons.
+Core JavaScript code for Taleem Project.
 
 ## Installation
 
@@ -14,30 +13,40 @@ npm install taleem-lib
 ```javascript
 import Taleem from 'taleem-lib';
 
-// Load all assets
+// Default usage (vanilla JS projects)
 const assets = await Taleem.loadAssets();
+
+// Custom assets path (recommended for Svelte and other framework projects)
+const assets = await Taleem.loadAssets('/your-custom-assets-path/');
 
 // Access loaded assets
 const { bgImages, spriteImages, icons } = assets;
 ```
-
-## Features
-
-- Concurrent loading of background images and sprites
-- Built-in error handling
-- Support for multiple asset types:
-  - Background images (various textures and patterns)
-  - Educational sprites (students, figures, alphabets, people)
-  - Icons
-
 ## API
 
-### `Taleem.loadAssets()`
+### `Taleem.loadAssets(basePath)`
 
-Loads all assets concurrently and returns a promise that resolves with an object containing:
+Loads all assets concurrently from the specified path.
+
+#### Parameters
+
+- `basePath` (optional): String - Base path for asset loading
+  - Default: `/assets/bgImages/` (works for vanilla JS projects)
+  - For Svelte and other framework projects, provide the correct path to your assets
+
+#### Returns
+
 - `bgImages`: Array of loaded background images
 - `spriteImages`: Array of loaded sprite configurations
 - `icons`: Object containing icon configurations
+
+## Path Configuration
+
+- **Vanilla JS Projects**: The default path `/assets/bgImages/` will work if your assets are in the correct location
+- **Framework Projects (Svelte, etc.)**: You need to specify the correct path to your assets folder. Example:
+  ```javascript
+  const assets = await Taleem.loadAssets('/path-to-your-assets/');
+  ```
 
 ## Error Handling
 

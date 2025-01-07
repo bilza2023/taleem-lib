@@ -3,10 +3,10 @@ import loadBgImages from "./loadBgImages.js";
 import loadSprites from "./loadSprites.js";
 import icons from "./icons.js";
 
-export default async function loadAssets(){
+export default async function loadAssets(basePath='/assets/bgImages/'){
     try{
- const bgImages = await  loadBgImages();
- const spriteImages = await loadSprites();
+ const bgImages = await  loadBgImages(basePath);
+ const spriteImages = await loadSprites(basePath);
  
     return {bgImages, spriteImages , icons}
     } catch(error){

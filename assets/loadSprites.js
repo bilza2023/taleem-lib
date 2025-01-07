@@ -4,7 +4,7 @@ import { figs } from "./sprite/figs.js";
 import { alphabets } from "./sprite/alphabets.js";
 import { people } from "./sprite/people.js";
 
-export default async function loadSprites() {
+export default async function loadSprites(basePath) {
     const spriteConfigs = [
       { name: 'students', config: students },
       { name: 'figs', config: figs },
